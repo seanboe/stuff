@@ -407,3 +407,47 @@ public class StudentClass{
         return str;
 	}//end of method curly bracket
 }//end of class curly bracket
+
+# SEQUENCELENGTH
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static int sequenceLength(String str, String ch){
+		//enter solution below
+        int count = 0; // Initialize the counting variable
+        int logest = 0; // current logest sequence
+        for(int i = 0; i < str.length(); i++){
+            
+            //compare one character obtained after 
+            if(str.substring(i, i+1).equals(ch)){
+                count++;
+            }else if(count != 0){ //when can you stop checking for the character?!
+                //a call to break will break out of the nearest loop
+                break;
+            }
+            
+        }
+        return count;
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# REPEATFRONT
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static String repeatFront(String str, int n){
+		//enter solution below
+        String res = ""; //initialize to an empty String
+        
+        for(int i = 0; i < n; i++){ //make the loop repeat n times
+            
+            String partial = str.substring(0, n);//grab first n chars of str
+            
+            res += partial;
+            
+        }
+        
+        return res;//return result;
+
+	}//end of method curly bracket
+}//end of class curly bracket
