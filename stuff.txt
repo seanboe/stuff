@@ -1,0 +1,258 @@
+# SERIES TWO
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static String seriesTwo(int n){
+
+		String output = "";
+		int val = 1;
+		int offset = 2;
+		for (int x = 0; x < n; x++) {
+		    output += val + " ";
+		    val += offset;
+		    offset += 2;
+		}
+
+
+        return output;
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# REPEAT END
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static String repeatEnd(String str, int n){
+		//enter solution below
+		String output = "";
+        String ending = str.substring(str.length() - n);
+        for (int x = 0; x < n; x++) {
+            output += ending;
+        }
+        return output;
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+
+# REVERSE DIGITS
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static String reverseDigits(int num){
+		//enter solution below
+		String result = "";
+		
+		while(num > 0){
+		    
+		    //extra the right most digit by using %
+		    int digit = num % 10;
+		    
+		    //add the extracted digit to the string with simple concatenation
+		    result += digit;
+		    
+		    //remove right most digit by dividing by base (10 in decimal)
+		    num = num / 10;
+		}
+		
+		//return the resulting string
+		return result;
+
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+
+# SERIES ONE
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static String seriesOne(int n){
+		
+        String result = "";
+        int curr = 1;
+        for (int x = 0; x < n; x++) {
+            result += curr + " ";
+            curr *= 3;
+        }
+        
+        return result; 
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# SUM N
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static int sumN(int n){
+		//enter solution below
+        int output = 0;
+        for (int x = 1; x <= n; x++) {
+            output += x;
+        }
+        return output;
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# EVEN DIGITS
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static int evenDigits(int num){
+		//enter solution below
+		int output = 0;
+        while (num > 0) {
+            if (num % 2 == 0) 
+                output++;
+            num = num / 10;
+        }
+        return output;
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# SUM DIGITS
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static int sumDigits(int num){
+		//enter solution below
+        int output = 0;
+        while (num > 0) {
+            output += num % 10;
+            num = num / 10;
+        }
+        return output;
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# COUNT HI
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static int countHi(String str){
+		//enter solution below
+
+        int counter = 0;
+        for (int x = 0; x < str.length() - 1; x++) {
+            String curr = str.substring(x, x + 2);
+            if (curr.equals("hi")) {
+                counter++;
+            }
+        }
+
+        return counter;
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# CATDOG
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static boolean catDog(String str){
+		//enter solution below
+		int cats = 0;
+		int dogs = 0;
+        for (int x = 0; x < str.length() - 2; x++) {
+            String curr = str.substring(x, x + 3);
+            if (curr.equals("cat")) {
+                cats++;
+            }
+            else if (curr.equals("dog")) {
+                dogs++;
+            }
+        }
+        return cats == dogs;
+        
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# NESTED FOR 2
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static String nestedFor(){
+		//enter solution below
+		String str = "";
+        for(int row = 0; row < 4; row++){
+            for(int col = 0; col <= 2; col++){
+                str += "*";
+            }
+						//add the new line character below inside the quote
+            str += "\n";
+        }
+        return str;
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# REPLACE ALL
+
+public class StudentClass{
+  /* complete the method below as desribed */
+	public static String replaceAll(String needle, String haystack, String rep){
+		//enter solution below
+        int len = needle.length();
+        String output = "";
+        while (haystack.indexOf(needle) > -1) {
+            output += haystack.substring(0, haystack.indexOf(needle));
+            output += rep;
+            haystack = haystack.substring(haystack.indexOf(needle) + len);
+        }
+        
+        return output + haystack;
+
+	}//end of method curly bracket
+}//end of class curly bracket
+
+# PIG LATIN
+
+public class StudentClass{
+
+  /* complete the method below as desribed */
+	public static String pigLatin(String original){
+        //write your code below
+    
+        String output = "";
+    
+        original += " ";
+        while (original.indexOf(" ") >= 0) {
+            String curr = original.substring(0, original.indexOf(" "));
+            if (isVowel(curr.substring(0, 1))) {
+                ;
+            }
+            else if (isConsanant(curr.substring(1, 2))) {
+                curr = curr.substring(2) + curr.substring(0, 2);
+            }
+            else  {
+                curr = curr.substring(1) + curr.substring(0, 1);
+            }
+            curr += "ay";
+            output += curr + " ";
+            original = original.substring(original.indexOf(" ") + 1);
+        }
+
+        return output;
+
+
+
+	}//end of method curly bracket
+	
+	/* returns true if the given character is a vowel */
+	public static boolean isVowel(String c){
+        String vowels = "aeiouAEIOU";
+        return vowels.contains(c.toLowerCase());
+    }
+
+
+	/* returns true if the given character is a isConsanant */
+    public static boolean isConsanant(String c){
+        String cons = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+        return cons.contains(c.toLowerCase());
+    }
+
+}//end of class curly bracket
